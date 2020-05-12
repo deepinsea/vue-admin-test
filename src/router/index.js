@@ -57,22 +57,29 @@ export const constantRoutes = [
 
   {
     path: '/example',
+    alwaysShow: true,
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    meta: { title: '系统管理', icon: 'example' },
     children: [
       {
         path: 'table',
         name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        component: () => import('@/views/user/index'),
+        meta: { title: '用户管理', icon: 'user' }
       },
       {
         path: 'tree',
         name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        component: () => import('@/views/role/index'),
+        meta: { title: '角色管理', icon: 'tree' }
+      },
+      {
+        path: 'right',
+        name: 'right',
+        component: () => import('@/views/right/index'),
+        meta: { title: '权限管理', icon: 'table' }
       }
     ]
   },
